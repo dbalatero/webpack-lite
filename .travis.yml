@@ -5,3 +5,9 @@ cache: bundler
 rvm:
   - 2.5.1
 before_install: gem install bundler -v 2.0.1
+jobs:
+  include:
+    - stage: rubocop
+      script: bundle exec rubocop
+    - stage: rspec
+      script: bundle exec rspec spec
