@@ -1,0 +1,3 @@
+AllCops:
+  Exclude:
+    - webpack-lite.gemspec

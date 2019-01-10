@@ -1,4 +1,4 @@
-require "webpack/lite/version"
+require 'webpack/lite/version'
 
 module Webpack
   module Lite
