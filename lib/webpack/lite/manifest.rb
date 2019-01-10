@@ -11,7 +11,7 @@ module Webpack
 
       def initialize(manifest_path)
         @manifest_path = manifest_path
-        @last_modified = Time.local(1970)
+        @last_modified = File.mtime(manifest_path)
       end
 
       def path(asset_name)
@@ -20,10 +20,21 @@ module Webpack
 
       private
 
-      attr_reader :manifest_path
+      attr_reader :manifest_path, :last_modified
 
       def assets
+        clear_assets_if_modified!
+
         @assets ||= JSON.parse(File.read(manifest_path))
+      end
+
+      def clear_assets_if_modified!
+        mtime = File.mtime(manifest_path)
+
+        if mtime > last_modified
+          @assets = nil
+          @last_modified = mtime
+        end
       end
     end
   end
