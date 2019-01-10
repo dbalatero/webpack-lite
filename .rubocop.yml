@@ -1,3 +1,43 @@
 AllCops:
   Exclude:
     - webpack-lite.gemspec
+
+Style/AndOr:
+  Enabled: true
+
+# Do not use braces for hash literals when they are the last argument of a
+# method call.
+Style/BracesAroundHashParameters:
+  Enabled: true
+
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+# No extra empty lines.
+Layout/EmptyLines:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+Metrics/LineLength:
+  Enabled: true
+  Max: 80
+  IgnoredPatterns: ['\A\s*class ']
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
