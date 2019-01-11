@@ -1,5 +1,7 @@
 module Webpack
   module Lite
+    # Provides controller and view helpers to Rails to get the full
+    # path to your assets.
     module Helper
       def webpack_asset_path(asset_name)
         Webpack::Lite::Manifest.path(asset_name)

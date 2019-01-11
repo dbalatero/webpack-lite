@@ -41,3 +41,6 @@ Metrics/LineLength:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Metrics/BlockLength:
+  Enabled: false

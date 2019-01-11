@@ -4,6 +4,7 @@ require "webpack/lite/manifest"
 require "webpack/lite/railtie" if defined?(Rails)
 
 module Webpack
+  # Main entry
   module Lite
     class Error < StandardError; end
 
