@@ -5,6 +5,7 @@ module Webpack
     # Hooks our library into Rails
     class Railtie < Rails::Railtie
       rake_tasks do
+        load "webpack/lite/tasks/compile.rake"
         load "webpack/lite/tasks/dev_server.rake"
         load "webpack/lite/tasks/test_server.rake"
       end

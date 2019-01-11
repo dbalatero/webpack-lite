@@ -1,13 +1,13 @@
+require "webpack/lite/tasks"
+
 namespace :webpack do
   namespace :lite do
     desc "Run a Webpack development watch server"
     task :dev_server do
-      exec(
-        {
-          "RAILS_ENV" => "development",
-          "NODE_ENV" => "development"
-        },
-        "./node_modules/.bin/webpack --watch"
+      Webpack::Lite::Tasks.exec(
+        "./node_modules/.bin/webpack --watch",
+        "RAILS_ENV" => "development",
+        "NODE_ENV" => "development"
       )
     end
   end
