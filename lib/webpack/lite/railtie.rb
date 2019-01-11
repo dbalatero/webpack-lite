@@ -4,6 +4,10 @@ module Webpack
   module Lite
     # Hooks our library into Rails
     class Railtie < Rails::Railtie
+      rake_tasks do
+        load "webpack/lite/tasks/dev.rake"
+      end
+
       initializer "webpack-lite.helper" do
         ActiveSupport.on_load :action_controller do
           ActionController::Base.helper Webpack::Lite::Helper
