@@ -1,10 +1,10 @@
 namespace :webpack do
   namespace :lite do
     desc "Run a Webpack development watch server"
-    task :dev do
+    task :test_server do
       exec(
         {
-          "RAILS_ENV" => "development",
+          "RAILS_ENV" => "test",
           "NODE_ENV" => "development"
         },
         "./node_modules/.bin/webpack --watch"
