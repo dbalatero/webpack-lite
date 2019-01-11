@@ -1,4 +1,5 @@
 require "webpack/lite/version"
+require "webpack/lite/helper"
 require "webpack/lite/manifest"
 require "webpack/lite/railtie" if defined?(Rails)
 

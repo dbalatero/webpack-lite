@@ -1,3 +1,5 @@
+require "json"
+
 module Webpack
   module Lite
     class Manifest

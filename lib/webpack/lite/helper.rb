@@ -10,7 +10,7 @@ module Webpack
       end
 
       def stylesheet_webpack_tag(asset_name, **options)
-        stylesheet_include_tag(webpack_asset_path(asset_name), options)
+        stylesheet_link_tag(webpack_asset_path(asset_name), options)
       end
     end
   end
