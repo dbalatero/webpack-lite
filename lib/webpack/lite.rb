@@ -13,8 +13,11 @@ module Webpack
         yield self
       end
 
-      attr_accessor :manifest_path
-      @manifest_path = "public/packs/manifest.json"
+      attr_writer :manifest_path
+
+      def manifest_path
+        @manifest_path || "public/packs/#{Rails.env}/manifest.json"
+      end
     end
   end
 end
