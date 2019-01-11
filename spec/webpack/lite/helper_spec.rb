@@ -30,20 +30,15 @@ RSpec.describe Webpack::Lite::Helper do
   describe "#javascript_webpack_tag" do
     it "should pass thru to javascript_include_tag" do
       expect(subject.javascript_webpack_tag("main.js")).to eq(
-        <<~EOF.strip
-          <script src="/packs/main.js"></script>
-        EOF
+        %(<script src="/packs/main.js"></script>)
       )
     end
   end
 
   describe "#stylesheet_webpack_tag" do
-
     it "should pass thru to stylesheet_include_tag" do
       expect(subject.stylesheet_webpack_tag("main.js")).to eq(
-        <<~EOF.strip
-          <link href="/packs/main.js"></link>
-        EOF
+        %(<link href="/packs/main.js"></link>)
       )
     end
   end
